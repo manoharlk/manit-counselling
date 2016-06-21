@@ -1,3 +1,127 @@
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+body {
+    font-family: 'Varela Round', Helvetica,sans-serif, Arial;
+    font-size: 16px;
+    color: #666666;
+    background-color: #fff;
+    font-weight: 400;
+/*    letter-spacing: 1px;*/
+}
+p {
+/*    line-height: 30px;*/
+    font-weight: 400;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Varela Round', Helvetica,sans-serif, Arial;
+    text-transform: uppercase;
+    color: #333333;
+    font-weight: 700;
+}
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    color: #308ac6;
+}
+
+/* navigation */
+.navbar-default {
+    background-color: transparent;
+    border: none;
+    padding: 0 0 0 0;
+}
+.navbar-default .navbar-nav>li>a {
+    font-size: 15px;
+    font-weight: 600;
+    color: #95a5a6;
+    text-transform: uppercase;
+    padding: 11px 0;
+    text-align: center;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #fff;   
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #fff;
+    background: none;
+    outline: 0;
+}
+.navbar-default .navbar-toggle {
+    border: none;    
+    margin-right: 0;
+    margin-top:0;
+    width: 32px;
+    height: 32px;
+    color: #fff;
+    text-align: center;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background: none;
+    outline: none;
+}
+.navbar-default .navbar-collapse {
+    border: none;
+    background: rgba(255,255,255,0.05);
+    border-radius: 2px;
+    box-shadow: none;
+}
+
+/* jumbotron */
+.jumbotron {
+/*    background: ;*/
+/*    background-image: url(../img/banner.png);*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+    max-height: 350px;
+/*    min-height: 300px;*/
+/*    padding: 60px 0;    */
+    margin: 0;
+}
+
+
+/* for the search */
+.search-faq{
+    margin: 100px auto;
+}
+
+#custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 23px;
+}
+
+
+
 
 
 /* For the faq */
@@ -12,6 +136,9 @@
     box-shadow:0px 1px 3px rgba(0,0,0,0.25);
     border-radius:3px;
     background:#f7f7f7;
+    margin: 30px auto;
+/*    padding: 30px 0 30px 0;*/
+    width: 90%;
 }
  
 /*----- Section Titles -----*/
@@ -23,7 +150,7 @@
     background:#333;
     transition:all linear 0.15s;
     /* Type */
-    font-size:1.200em;
+    font-size:1.1em;
     text-shadow:0px 1px 0px #1a1a1a;
     color:#fff;
 }
@@ -38,8 +165,51 @@
     border-bottom:none;
 }
  
-/*----- Section Content -----*/
 .faq-content {
     padding:15px;
     display:none;
+}
+.faq-content p, .faq-content li {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* for the footer */
+
+footer {
+    padding: 15px 0 0 0;
+    margin-top: 30px;
+/*    margin-bottom: -90px;*/
+    background-color: darkgray;
+}
+footer p {
+    padding: 5px;
+    font-size: 17px;
+}
+/* responsive part breakdown points */
+@media(min-width: 768px) {
+    .navbar-default .navbar-collapse{ background: none;}
+    .navbar-default .navbar-nav { float:right; }
+    .navbar-default .navbar-nav>li{ margin-left: 30px; }
+    .navbar-default .navbar-nav>li>a { padding: 9px 0 0 0;}
+    .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+        border-bottom: 2px solid #fff;
+    }
+    .jumbotron {
+    padding-top: 24px;
+    padding-bottom: 48px;
+}
+    
+}
+    
+@media(min-width: 992px) {
+    .navbar-default .navbar-nav>li{ margin-left: 40px; }
+
+}
+
+@media(min-width: 1200px){
+/*    .jumbotron{ padding: 60px 0 120px 0;}*/
+    .navbar{ margin-bottom: 0;}
+    
+    footer { margin-bottom: -80px; }
 }
