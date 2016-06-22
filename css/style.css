@@ -191,7 +191,10 @@ footer p {
 #gallery {
     margin: 20px auto;
 }
-
+.fotorama__caption {
+    text-align: center;
+    font-size: 20px;
+}
 
 
 
