@@ -186,6 +186,24 @@ footer p {
     padding: 5px;
     font-size: 17px;
 }
+
+/* for the gallery */
+#gallery {
+    margin: 20px auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* responsive part breakdown points */
 @media(min-width: 768px) {
     .navbar-default .navbar-collapse{ background: none;}
@@ -204,12 +222,25 @@ footer p {
     
 @media(min-width: 992px) {
     .navbar-default .navbar-nav>li{ margin-left: 40px; }
+    
+    #gallery {
+        width: 90%;
+        margin: 20px auto;
+    }
 
 }
 
+
 @media(min-width: 1200px){
 /*    .jumbotron{ padding: 60px 0 120px 0;}*/
+    .navbar-default .navbar-nav>li{ margin-left: 40px; }
+    
     .navbar{ margin-bottom: 0;}
     
+    #gallery {
+        width: 90%;
+        margin: 20px auto;
+        padding-left: 4%;
+    }
     footer { margin-bottom: -80px; }
 }
