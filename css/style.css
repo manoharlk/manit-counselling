@@ -226,6 +226,9 @@ a:hover, a:focus {
     font-style: underline;
     color: #30415D;
 }
+.small-caps {
+    text-transform: lowercase;
+}
 .call-to-action a:hover, .call-to-action a:active {
     color: #30415D;
     font-style: underline;
@@ -338,6 +341,12 @@ footer p {
 
 
 
+/* for the blog */
+
+.blog {
+    display: block;
+    margin: 0 auto;
+}
 
 /* responsive part breakdown points */
 @media(min-width: 768px) {
