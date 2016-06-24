@@ -261,12 +261,13 @@ footer p {
 .fotorama__caption {
     text-align: center;
     font-family: "Varela Round", sans-serif;
-    font-size: 20px;
+    font-size: 14px;
 /*    font-weight: bold;*/
 }
 
 .fotorama__caption__wrap {
-    font-size: 20px;
+    font-size: 14px;
+    padding: 3px 5px;
 }
 
 
