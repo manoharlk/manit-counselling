@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manitian | Admission help for MANIT</title>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" >
+    <link rel="stylesheet" href="css/style.css" type="text/css" >
+       <meta name="description" content="Manitian is an initiative by MANIT(NIT Bhopal) students to help newcomers through JEE Counselling and Admission Process into MANIT. This website will resolve all your queries"  />
+    <!--[if IE]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="device-width, initial-scale=1" >
+    <meta name="keywords" content="manit, nit, nitb, national institute of technology, life at manit, gallery, manitb, bhopal, nit counselling, ">
+    <style>
+		#map {
+			width: 80%;
+			height: 600px;
+			margin: 0 auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		@media only screen and (max-width: 480px) {
+			#map {
+				width: 95%;
+			}
+		}
+	</style>
+   <script src="https://maps.google.com/maps/api/js?key=AIzaSyAjFH_uwW9epd93w30voBobzbf2ydJ3zps" type="text/javascript"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-79862749-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+</head>
+<body>
+ 	<div class="jumbotron">
+       <div class="container">            
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle='collapse' 
+                   data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="img/manitian.png" alt="Manit" ></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                   <li><a href="blog.html">Life at MANIT</a></li>
+                    <li><a href="index.html">FAQs</a></li> 
+                    <li><a href='gallery.html'>Gallery</a></li>
+                    <li class="active"><a href='map.html'>Map</a></li>
+                    <li><a href='about.html'>About Us</a></li>
+                </ul>
+            </div>
+        </nav><!-- End of Nav bar-->
+          
+            <div class='row text-center'>
+                <h2>MANIT MAP</h2>
+            </div>   
+		</div>
+	</div>
+ 	
+ 	
+  	<div  id="map">
+		
+	</div>
+
+
+
+<script type="text/javascript">
+    var locations = [        
+        ['Hostel 4', 23.209931, 77.411154, 22],
+        ['Hostel 3', 23.211095, 77.410371, 21],
+        ['Hostel 2', 23.211657, 77.409727, 20],
+        ['Hostel 1', 23.212446, 77.409384, 19],
+        ['SAC(Auditorium)', 23.215489, 77.406250, 18],
+        ['Mechanical Department', 23.215394, 77.407495,17],
+        ['New Admin Block', 23.217377, 77.403603, 16],
+        ['Shopping Complex', 23.214807, 77.402988, 15],
+        ['Sports Complex', 23.211499, 77.406197, 14],
+        ['Football Ground', 23.210277, 77.404223, 13],
+        ['Cricket Ground', 23.208797, 77.406079, 12],
+        ['NRI Hostel', 23.207427, 77.408222, 11],
+        ['Electrical Department', 23.216396, 77.406892, 10],
+        ['Dept. of Architecture and Planning', 23.217106, 77.406522, 9],
+        ['CSIT', 23.217180, 77.405396, 8],
+        ['MSME & Chemical Department', 23.213609, 77.407216, 7],
+        ['Hostel 6', 23.213925, 77.416454, 6],       
+        
+        ['Hostel 7', 23.214250, 77.400865, 5],
+        ['Civil Department', 23.214280, 77.407216, 4],
+        ['New Teaching Block', 23.217958, 77.408718, 3],
+        ['Porch', 23.216784, 77.406294, 2],
+        ['Hostel 5', 23.214300, 77.414265, 1]
+        
+        
+    ];
+    var customMapType = new google.maps.StyledMapType([
+            {
+              stylers: [
+                {hue: '#890000'},
+                {visibility: 'simplified'},
+                {gamma: 0.5},
+                {weight: 0.5}
+              ]
+            },
+            {
+              elementType: 'labels',
+              stylers: [{visibility: 'on'}]
+            },
+            {
+              featureType: 'water',
+              stylers: [{color: '#CF6766'}]
+            }
+          ], {
+            name: 'Custom Style'
+        });
+        var customMapTypeId = 'custom_style';
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
+      center: new google.maps.LatLng(23.214642, 77.407297),
+      mapTypeControlOptions: {
+          mapTypeId: [google.maps.MapTypeId.ROADMAP, customMapTypeId]}
+    });
+    map.mapTypes.set(customMapTypeId, customMapType);
+        map.setMapTypeId(customMapTypeId);
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i=0;i<locations.length;i++) { 
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        //animation: google.maps.Animation.BOUNCE,
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
+  	<div class="call-to-action">
+        <div class="container">
+            <div class="row text-center" id="contact-text">
+                <h3>If you have any query regarding admissions,</h3>
+                <h3> Mail Us at <span class="small-caps"><a href="mailto:maarg.nitb@gmail.com">maarg.nitb@gmail.com</a></span> or </h3>
+                <h3>Contact Us at our <span><a href="http://www.facebook.com/maarg.nitb" target="_blank">Facebook Page</a></span></h3>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+      <div class="container clearfix">
+          <div class="row">
+              <div class="col-md-6 pull-left">
+                <p>The publisher holds no responsibility over validity of data.</p>             
+              </div> 
+              <div class="col-md-6 pull-right">
+<!--                  <p class="copy">Developed by Manohar Lakkoju</p>-->
+              </div>
+          </div>
+      </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
